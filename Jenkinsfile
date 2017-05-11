@@ -60,7 +60,7 @@ def presubmit(gitUtils, bazel, utils) {
 }
 
 def postsubmit(gitUtils, bazel, utils) {
-  goBuildNode(gitUtils, 'istio.io/mixer') {
+  goBuildNode(gitUtils, 'istio.io/auth') {
     bazel.updateBazelRc()
     stage('Code Coverage') {
       bazel.fetch('-k //...')
