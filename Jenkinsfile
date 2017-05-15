@@ -79,8 +79,8 @@ def postsubmit(gitUtils, bazel, utils) {
 def stablePresubmit(gitUtils, bazel, utils) {
   goBuildNode(gitUtils, 'istio.io/auth') {
     stage('Docker Push') {
-      def image = 'istio-ca'
-      def tags = "${env.GIT_SHA}"
+      def images = 'istio-ca'
+      def tags = env.GIT_SHA
       utils.publishDockerImagesToContainerRegistry(images, tags)
     }
   }
