@@ -15,7 +15,14 @@
 syntax = "proto3";
 import "google/rpc/status.proto";
 
-package istio.v1.auth;
+package proto;
+
+import "gogoproto/gogo.proto";
+
+// option go_package="istio_v1_auth";
+// option (gogoproto.goproto_getters_all) = false;
+// option (gogoproto.equal_all) = false;
+// option (gogoproto.gostring_all) = false;
 
 // Service definition of IstioCAService that can dynamically verify the CSR for
 // service identities for Istio services running on various platforms and
@@ -38,16 +45,16 @@ message CertificateSignRequest {
 
 message NodeAgentCredentials {
   oneof node_credential {
-    GcpInstanceCredential gcp_instance_credential = 1;
+    GcpInstanceCredential gcpInstanceCredential = 1;
   }
 }
 
 message GcpInstanceCredential {
-  bytes signed_instance_metadata = 1;
+  bytes signedInstanceMetadata = 1;
 }
 
 message CertificateSignResponse {
   bool is_approved = 1;
   google.rpc.Status status = 2;
-  bytes signed_cert_chain = 3;
+  bytes signedCertChain = 3;
 }
