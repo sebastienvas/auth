@@ -40,21 +40,21 @@ service IstioCAService {
 
 message CertificateSignRequest {
   bytes csr = 1;
-  NodeAgentCredentials nodeAgentCredentials = 2;
+  NodeAgentCredentials node_agent_credentials = 2;
 }
 
 message NodeAgentCredentials {
   oneof node_credential {
-    GcpInstanceCredential gcpInstanceCredential = 1;
+    GcpInstanceCredential gcp_instance_credential = 1;
   }
 }
 
 message GcpInstanceCredential {
-  bytes signedInstanceMetadata = 1;
+  bytes signed_instance_metadata = 1;
 }
 
 message CertificateSignResponse {
   bool is_approved = 1;
   google.rpc.Status status = 2;
-  bytes signedCertChain = 3;
+  bytes signed_cert_chain = 3;
 }
