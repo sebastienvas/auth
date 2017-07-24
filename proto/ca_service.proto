@@ -15,7 +15,7 @@
 syntax = "proto3";
 import "google/rpc/status.proto";
 
-package istio_v1_auth;
+package istio.v1.auth;
 
 import "gogoproto/gogo.proto";
 
