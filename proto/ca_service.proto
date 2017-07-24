@@ -15,14 +15,14 @@
 syntax = "proto3";
 import "google/rpc/status.proto";
 
-package proto;
+package istio_v1_auth;
 
 import "gogoproto/gogo.proto";
 
-// option go_package="istio_v1_auth";
-// option (gogoproto.goproto_getters_all) = false;
-// option (gogoproto.equal_all) = false;
-// option (gogoproto.gostring_all) = false;
+option go_package="istio_v1_auth";
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.equal_all) = false;
+option (gogoproto.gostring_all) = false;
 
 // Service definition of IstioCAService that can dynamically verify the CSR for
 // service identities for Istio services running on various platforms and
