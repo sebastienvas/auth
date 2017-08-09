@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # Example usage:
 #
@@ -21,7 +21,7 @@ function docker_push() {
   if [[ "${im}" =~ ^gcr\.io ]]; then
     gcloud docker -- push "${im}"
   else
-    docker push ${im}
+    docker push "${im}"
   fi
 }
 
